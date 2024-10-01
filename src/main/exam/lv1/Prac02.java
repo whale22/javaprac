@@ -2,7 +2,7 @@ package exam.lv1;
 
 import java.util.Scanner;
 
-public class Prac01 {
+public class Prac02 {
     //프로그래머스 Lv1 문제풀이
 }
 
