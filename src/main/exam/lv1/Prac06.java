@@ -31,24 +31,24 @@ class Solution10 {
         boolean flag = false;
         for(int i=0;i<park.length;i++){
             for(int j=0;j<park[0].length;j++){
-                int wCount=1, hCount=1;
+                int wCount=0, hCount=0;
                 if(park[i][j].equals("-1")){
                     flag=true;
-                    for(int k=j+1;k<park[0].length;k++){
+                    for(int k=j;k<park[0].length;k++){
                         if(park[i][k].equals("-1")) {
                             wCount++;
                         }
                         else break;
                     }
 
-                    for(int k=i+1;k<park.length;k++){
+                    for(int k=i;k<park.length;k++){
                         if(park[k][j].equals("-1")) {
                             hCount++;
                         }
                         else break;
                     }
 
-                    if(wCount!=1 && hCount!=1){
+                    if(wCount!=1 || hCount!=1){
                         int min = (wCount<hCount)? wCount : hCount;
                         max = (max>=min)? max : min;
                     }
@@ -59,6 +59,6 @@ class Solution10 {
             }
         }
         if(flag==true) return max;
-        else return 0;
+        else return -1;
     }
 }
